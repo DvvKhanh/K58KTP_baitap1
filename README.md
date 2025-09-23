@@ -46,14 +46,11 @@ Công thức giải mã: P=(C−K)(mod26)
 ## 2. Phương pháp Affine
 ### Tên gọi: Mã Affine
 ### Thuật toán:
-Mã hóa: Mỗi ký tự P được mã hóa thành C theo công thức: C=(aP+b)(mod26)
-
-Trong đó: 
-- a,b: Khóa (khóa a phải là số nguyên tố cùng nhau với 26)
-
-Giải mã: Để giải mã, ta cần tìm nghịch đảo của a modulo 26, ký hiệu là a^−1.
-P=a^−1(C−b)(mod26)
-Lưu ý: a^−1 phải thỏa mãn (a×a^−1)(mod26)=1.
+- Mã hóa: Mỗi ký tự P được mã hóa thành C theo công thức: C=(aP+b)(mod26)
+- Trong đó: a,b là khóa (khóa a phải là số nguyên tố cùng nhau với 26)
+- Giải mã: Để giải mã, ta cần tìm nghịch đảo của a modulo 26, ký hiệu là a^−1.
+- P=a^−1(C−b)(mod26)
+- Lưu ý: a^−1 phải thỏa mãn (a×a^−1)(mod26)=1.
 ### Không gian khóa:
 Không gian khóa của mã Affine lớn hơn Caesar. Khóa a có 12 giá trị có thể (1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25) và khóa b có 26 giá trị có thể (0-25). Tổng số khóa là 12×26=312 khóa.
 
