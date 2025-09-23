@@ -89,3 +89,95 @@ Các bước:
 
 ## Mã hóa:
 
+<img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/7eac0a2c-2ac1-4e00-8ec6-53d88a7cbb07" />
+
+## Giải mã:
+
+<img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/958f77a5-2d19-47e6-8d75-8a16967672b1" />
+
+# 4. Phương pháp mã hóa Vigenère
+## Tên gọi: Vigenère cipher — polyalphabetic substitution dùng chuỗi khóa lặp lại để đổi bảng Caesar theo từng vị trí.
+## Thuật toán:
+### Thuật toán mã hoá:
+
+Khóa: chuỗi ký tự K dài m.
+
+Công thức:
+
+Với plaintext ký tự Pi(0...25) và key ký tự Kj với j=i mod m: Ci = (Pi + Kj) mod 26.
+
+Các bước:
+- Chuẩn hoá: thường dùng chữ hoa/không dấu.
+- Lặp lại key để khớp chiều dài plaintext.
+- Với từng ký tự, cộng giá trị key rồi mod 26.
+
+### Thuật toán giải mã: Ci = (Pi + Kj) mod 26
+
+## Không gian khóa
+- Nếu key độ dài m và mỗi ký tự có 26 khả năng: 26^m. Tuy nhiên, nếu key lấy từ từ ngôn ngữ tự nhiên, không gian hiệu dụng nhỏ hơn.
+
+## Cách phá mã (không cần khoá)
+- Kasiski examination: tìm các chuỗi trùng lặp (tri-gram, 4-gram) trong ciphertext, đo khoảng cách giữa các lần lặp → ước đoán độ dài key m (ước số chung của các khoảng cách).
+- Friedman test (Index of Coincidence): ước lượng độ dài key bằng tính IC (chỉ số trùng hợp).
+- Khi biết m: chia ciphertext thành m dãy (các ký tự tương ứng cùng vị trí modulo m), mỗi dãy là Caesar cipher → áp dụng phân tích tần suất trên từng dãy để tìm shift của từng dãy → xây lại key.
+- Kết hợp: sử dụng scoring n-gram để chọn độ dài key và key tốt nhất.
+
+## Mã hóa:
+
+<img width="1917" height="1137" alt="image" src="https://github.com/user-attachments/assets/4fd105a7-82d5-4d05-9982-c8f4845b41d3" />
+
+## Giải mã:
+
+<img width="1917" height="1136" alt="image" src="https://github.com/user-attachments/assets/0dc5ad60-b99d-4792-9264-253b7b30c0cb" />
+
+# 5. Phương pháp mã hóa Playfair
+
+## Tên gọi: Playfair cipher — substitution cipher làm việc theo cặp ký tự (digraph), sử dụng một ma trận 5×5 (tổng 25 chữ cái, thường gộp I và J).
+
+## Thuật toán:
+
+### Thuật toán mã hóa:
+
+Tạo key square 5×5:
+- Viết khóa (loại chữ trùng, gộp J → I) theo thứ tự xuất hiện.
+- Sau đó điền các chữ cái còn lại (A..Z, bỏ J) theo thứ tự.
+  
+Chuẩn bị plaintext:
+- Loại bỏ ký tự không phải chữ (tuỳ chọn), chuyển sang chữ hoa.
+- Gộp J thành I.
+- Chia plaintext thành digraphs (cặp 2 ký tự):
+    - Nếu trong cặp 2 ký tự giống nhau (ví dụ "AA"), chèn X (hoặc Q) giữa, rồi tiếp tục phân chia.
+    - Nếu chuỗi lẻ → thêm X vào cuối.
+  
+Mã hoá mỗi digraph (A,B):
+- Nếu A và B ở cùng hàng: thay mỗi chữ bằng chữ bên phải của nó (vòng lại).
+- Nếu A và B ở cùng cột: thay mỗi chữ bằng chữ bên dưới của nó (vòng lại).
+- Nếu khác hàng & cột: thay mỗi chữ bằng chữ cùng hàng nhưng lấy cột của chữ kia (tạo hình chữ nhật).
+Nối các digraph đã biến đổi thành ciphertext.
+
+### Thuật toán giải mã:
+
+Tương tự thuật toán mã hóa nhưng:
+- Nếu cùng hàng: thay bằng chữ bên trái.
+- Nếu cùng cột: thay bằng chữ bên trên.
+- Nếu khác: đảo lại các cột như lúc mã hoá.
+
+## Không gian khóa:
+- Không gian lớn (rất nhiều ma trận 5×5 khả dĩ), nhưng thực tế khóa thường là chuỗi từ ngôn ngữ → không gian thực lựa chọn nhỏ hơn. Không brute-force toàn bộ 25! được.
+
+## Cách phá mã:
+- Phân tích digraph: so sánh tần suất digraphs, bigram scoring.
+- Heuristic search: hill-climbing, simulated annealing, genetic algorithm trên không gian các ma trận 5×5 — tối ưu scoring n-gram (English fitness) để tìm ma trận khả dĩ.
+- Known-plaintext: nếu biết vài cặp digraph → rút ra cấu trúc key square.
+- Vì Playfair mã hóa theo digraph nên phân tích tần suất đơn ký tự ít hữu dụng hơn; phải dùng digraph/quadgram.
+
+## Mã hóa:
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/aa80d6f7-10b3-4e20-be2c-794bc5cd9f7a" />
+
+## Giải mã:
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/a3c268bf-9c4e-4314-a8df-a8acf4dd406a" />
+
+
+
