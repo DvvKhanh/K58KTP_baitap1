@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Caesar Cipher</title>
+  <link rel="stylesheet" href="caesar.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>Mã Caesar</h1>
+
+    <div class="form-area">
+      <label>Nhập văn bản (A–Z):</label>
+      <input id="inputText" type="text" maxlength="100">
+
+      <label>Nhập khóa k (0–25):</label>
+      <input id="shift" type="number" min="0" max="25">
+
+      <div class="btns">
+        <button onclick="encrypt()">Mã hóa</button>
+        <button onclick="decrypt()">Giải mã</button>
+      </div>
+    </div>
+
+    <div class="output-area" id="details" style="display:none;">
+      <h3>Kết quả chi tiết</h3>
+      <div id="stage1"></div>
+      <div id="stage2"></div>
+      <div id="stage3"></div>
+      <div id="final"></div>
+    </div>
+  </div>
+
+  <script src="caesar.js"></script>
+</body>
+</html>
