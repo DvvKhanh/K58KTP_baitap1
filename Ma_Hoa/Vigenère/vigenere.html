@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <title>Mã hóa Vigenère</title>
+  <link rel="stylesheet" href="vigenere.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>Mã hóa Vigenère</h1>
+
+    <div class="form-area">
+      <label for="txt">Nhập văn bản:</label>
+      <textarea id="txt"></textarea>
+
+      <label for="key">Khóa (chỉ chứa chữ cái):</label>
+      <input id="key" value="">
+
+      <div class="btns">
+        <button onclick="encryptVigenere()">Mã hóa</button>
+        <button onclick="decryptVigenere()">Giải mã</button>
+      </div>
+    </div>
+
+    <div class="output-area" id="stepsBox" style="display:none;">
+      <h3>Quy trình chi tiết</h3>
+      <div id="log1"></div>
+      <div id="log2"></div>
+      <div id="log3"></div>
+      <div id="final"></div>
+    </div>
+  </div>
+
+  <script src="vigenere.js"></script>
+</body>
+</html>
