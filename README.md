@@ -89,11 +89,11 @@ Các bước:
 
 ## Mã hóa:
 
-<img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/7eac0a2c-2ac1-4e00-8ec6-53d88a7cbb07" />
+<img width="1919" height="1138" alt="image" src="https://github.com/user-attachments/assets/88b90a54-898e-4e9e-9646-23f4272a7fb9" />
 
 ## Giải mã:
 
-<img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/958f77a5-2d19-47e6-8d75-8a16967672b1" />
+<img width="1919" height="1140" alt="image" src="https://github.com/user-attachments/assets/1f7e429a-34b7-4903-9ea3-9ca4a37db429" />
 
 # 4. Phương pháp mã hóa Vigenère
 ## Tên gọi: Vigenère cipher — polyalphabetic substitution dùng chuỗi khóa lặp lại để đổi bảng Caesar theo từng vị trí.
