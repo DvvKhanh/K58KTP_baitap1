@@ -43,7 +43,7 @@ Công thức giải mã: P=(C−K)(mod26)
 
 <img width="1917" height="1138" alt="image" src="https://github.com/user-attachments/assets/447d30cf-3c35-4354-8948-ebf5473c41fd" />
 
-# 2. Phương pháp Affine
+# 2. Phương pháp mã hóa Affine
 ## Tên gọi: Mã Affine
 ## Thuật toán:
 ### Mã hóa: Mỗi ký tự P được mã hóa thành C theo công thức: C=(aP+b)(mod26)
@@ -55,3 +55,37 @@ Công thức giải mã: P=(C−K)(mod26)
 ## Cách phá mã:
 - Tìm nghịch đảo modulo: Tìm a⁻¹.
 - Thử mọi khóa (bất kỳ): Thử tất cả các cặp (a, b) phù hợp với điều kiện gcd(a, m) = 1.
+
+## Mã hóa:
+
+<img width="1919" height="1138" alt="image" src="https://github.com/user-attachments/assets/c8f1996d-766c-423d-b0a0-a522dd423be1" />
+
+## Giải mã:
+
+<img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/c97eed0a-9cd7-469b-beb9-3a5021c71b74" />
+
+# 3. Phương pháp mã hóa hoán vị
+## Tên gọi: Columnar Transposition (Mã hoán vị cột) — viết plaintext theo hàng vào một lưới có số cột = độ dài khóa, rồi đọc cột theo thứ tự khóa đã được sắp xếp.
+## Thuật toán:
+### Thuật toán mã hoá:
+Khóa: một từ (ví dụ "ZEBRA") — độ dài m.
+
+Các bước:
+- Loại bỏ/giữ spaces theo cách bạn muốn (thường bỏ spaces để đơn giản).
+- Viết plaintext theo hàng vào bảng có m cột (độ dài khóa). Nếu cần, padding ký tự (ví dụ 'X') để đầy hàng cuối.
+- Gán thứ tự cho các cột bằng cách sắp chữ cái khóa theo bảng chữ cái, nếu trùng chữ thì dùng chỉ số xuất hiện.
+- Đọc ciphertext theo cột theo thứ tự tăng dần của thứ tự gán (tức cột có chữ nhỏ nhất trước...).
+### Thuật toán giải mã:
+- Biết độ dài khóa m → bạn biết số cột. Từ chiều dài ciphertext tính số hàng rows = ceil(len(cipher)/m).
+- Dựa vào thứ tự khóa, phân chia ciphertext thành từng cột theo thứ tự đó (mảng cột có rows ký tự mỗi cột, có thể cột cuối thiếu ký tự nếu padding không đầy).
+- Sau đó dựng lại bảng hàng xột và đọc theo hàng để lấy plaintext (loại padding nếu có).
+## Không gian khóa
+- Nếu khóa dài m và ký tự khác nhau, có m! hoán vị khả dĩ — không gian tăng rất nhanh. Nhưng nếu khóa là từ tự nhiên thì không gian thực tế nhỏ hơn.
+## Cách phá mã (không cần khoá)
+- Brute-force: thử tất cả m! hoán vị — chỉ khả thi khi m nhỏ (ví dụ m ≤ 8).
+- Kết hợp với scoring n-gram: dùng thuật toán tìm kiếm trên không gian hoán vị, tính điểm bằng n-gram (bigrams/trigrams) để chọn hoán vị hợp lý.
+- Known-plaintext / crib: nếu biết đoạn plaintext xuất hiện ở đâu, dùng để tìm hoán vị phù hợp.
+- Phân tích cấu trúc: dựa vào vị trí khoảng trắng/điểm, tần suất chữ, độ dài từ để suy.
+
+## Mã hóa:
+
