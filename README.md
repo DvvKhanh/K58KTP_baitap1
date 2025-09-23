@@ -33,3 +33,11 @@ Công thức giải mã: P=(C−K)(mod26)
 - Brute-force: thử tất cả 26 giá trị k và đọc ra plaintext hợp lý. Thường dùng người đọc (human) hoặc kiểm tra bằng từ điển.
 - Phân tích tần suất: tìm ký tự xuất hiện nhiều nhất trong ciphertext (thường tương ứng E trong tiếng Anh) → suy k bằng cách so sánh.
 - Kết hợp: dùng scoring (n-gram) để tự động chọn candidate tốt nhất.
+
+### Mã hóa:
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/9c8b5a58-f9ba-4fb3-870c-2843379af0b9" />
+
+### Giải mã:
+
+<img width="1917" height="1138" alt="image" src="https://github.com/user-attachments/assets/b8e539e1-0c55-4307-89b8-b1bc2c7fa913" />
