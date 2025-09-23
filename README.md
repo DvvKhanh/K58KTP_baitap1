@@ -25,6 +25,7 @@ Công thức mã hóa: C=(P+K)(mod26)
 Trong đó:
 + C: Ký tự trong bản mã
 + K: Khoảng dịch chuyển (khóa)
+  
 Giải mã: Ngược lại, mỗi ký tự trong bản mã được dịch chuyển ngược lại với cùng một khoảng cách.
 
 Công thức giải mã: P=(C−K)(mod26)
@@ -36,8 +37,24 @@ Công thức giải mã: P=(C−K)(mod26)
 
 ### Mã hóa:
 
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/9c8b5a58-f9ba-4fb3-870c-2843379af0b9" />
+<img width="1919" height="1138" alt="image" src="https://github.com/user-attachments/assets/e3998e0f-211e-403e-9b40-1a4e3c23997e" />
 
 ### Giải mã:
 
-<img width="1917" height="1138" alt="image" src="https://github.com/user-attachments/assets/b8e539e1-0c55-4307-89b8-b1bc2c7fa913" />
+<img width="1917" height="1138" alt="image" src="https://github.com/user-attachments/assets/447d30cf-3c35-4354-8948-ebf5473c41fd" />
+
+## 2. Phương pháp Affine
+### Tên gọi: Mã Affine
+### Thuật toán:
+Mã hóa: Mỗi ký tự P được mã hóa thành C theo công thức: C=(aP+b)(mod26)
+
+Trong đó: 
+- a,b: Khóa (khóa a phải là số nguyên tố cùng nhau với 26)
+
+Giải mã: Để giải mã, ta cần tìm nghịch đảo của a modulo 26, ký hiệu là a^−1.
+P=a^−1(C−b)(mod26)
+Lưu ý: a^−1 phải thỏa mãn (a×a^−1)(mod26)=1.
+### Không gian khóa:
+Không gian khóa của mã Affine lớn hơn Caesar. Khóa a có 12 giá trị có thể (1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25) và khóa b có 26 giá trị có thể (0-25). Tổng số khóa là 12×26=312 khóa.
+
+Cách phá mã
