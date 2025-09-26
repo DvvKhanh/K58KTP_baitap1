@@ -35,10 +35,6 @@ Công thức giải mã: P=(C−K)(mod26)
 - Phân tích tần suất: tìm ký tự xuất hiện nhiều nhất trong ciphertext (thường tương ứng E trong tiếng Anh) → suy k bằng cách so sánh.
 - Kết hợp: dùng scoring (n-gram) để tự động chọn candidate tốt nhất.
 
-## C++:
-
-<img width="1478" height="763" alt="image" src="https://github.com/user-attachments/assets/58bdfa3f-41ce-4944-809b-15d835ce06fe" />
-
 ## Mã hóa:
 
 <img width="1919" height="1138" alt="image" src="https://github.com/user-attachments/assets/e3998e0f-211e-403e-9b40-1a4e3c23997e" />
@@ -46,6 +42,10 @@ Công thức giải mã: P=(C−K)(mod26)
 ## Giải mã:
 
 <img width="1917" height="1138" alt="image" src="https://github.com/user-attachments/assets/447d30cf-3c35-4354-8948-ebf5473c41fd" />
+
+## C++:
+
+<img width="1478" height="763" alt="image" src="https://github.com/user-attachments/assets/58bdfa3f-41ce-4944-809b-15d835ce06fe" />
 
 # 2. Phương pháp mã hóa Affine
 ## Tên gọi: Mã Affine
@@ -60,10 +60,6 @@ Công thức giải mã: P=(C−K)(mod26)
 - Tìm nghịch đảo modulo: Tìm a⁻¹.
 - Thử mọi khóa (bất kỳ): Thử tất cả các cặp (a, b) phù hợp với điều kiện gcd(a, m) = 1.
 
-## C++:
-
-<img width="1475" height="755" alt="image" src="https://github.com/user-attachments/assets/ae7e7d6f-be4a-41cb-8f70-ec4502ffe109" />
-
 ## Mã hóa:
 
 <img width="1919" height="1138" alt="image" src="https://github.com/user-attachments/assets/c8f1996d-766c-423d-b0a0-a522dd423be1" />
@@ -71,6 +67,10 @@ Công thức giải mã: P=(C−K)(mod26)
 ## Giải mã:
 
 <img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/c97eed0a-9cd7-469b-beb9-3a5021c71b74" />
+
+## C++:
+
+<img width="1475" height="755" alt="image" src="https://github.com/user-attachments/assets/ae7e7d6f-be4a-41cb-8f70-ec4502ffe109" />
 
 # 3. Phương pháp mã hóa hoán vị
 ## Tên gọi: Columnar Transposition (Mã hoán vị cột) — viết plaintext theo hàng vào một lưới có số cột = độ dài khóa, rồi đọc cột theo thứ tự khóa đã được sắp xếp.
@@ -95,10 +95,6 @@ Các bước:
 - Known-plaintext / crib: nếu biết đoạn plaintext xuất hiện ở đâu, dùng để tìm hoán vị phù hợp.
 - Phân tích cấu trúc: dựa vào vị trí khoảng trắng/điểm, tần suất chữ, độ dài từ để suy.
 
-## C++:
-
-<img width="1473" height="760" alt="image" src="https://github.com/user-attachments/assets/da50fd39-8579-4f06-a8e2-d82302ff52b3" />
-
 ## Mã hóa:
 
 <img width="1919" height="1138" alt="image" src="https://github.com/user-attachments/assets/88b90a54-898e-4e9e-9646-23f4272a7fb9" />
@@ -106,6 +102,10 @@ Các bước:
 ## Giải mã:
 
 <img width="1919" height="1140" alt="image" src="https://github.com/user-attachments/assets/1f7e429a-34b7-4903-9ea3-9ca4a37db429" />
+
+## C++:
+
+<img width="1473" height="760" alt="image" src="https://github.com/user-attachments/assets/da50fd39-8579-4f06-a8e2-d82302ff52b3" />
 
 # 4. Phương pháp mã hóa Vigenère
 ## Tên gọi: Vigenère cipher — polyalphabetic substitution dùng chuỗi khóa lặp lại để đổi bảng Caesar theo từng vị trí.
@@ -134,10 +134,6 @@ Các bước:
 - Khi biết m: chia ciphertext thành m dãy (các ký tự tương ứng cùng vị trí modulo m), mỗi dãy là Caesar cipher → áp dụng phân tích tần suất trên từng dãy để tìm shift của từng dãy → xây lại key.
 - Kết hợp: sử dụng scoring n-gram để chọn độ dài key và key tốt nhất.
 
-## C++:
-
-<img width="1478" height="757" alt="image" src="https://github.com/user-attachments/assets/c444f457-5a00-4b77-b1f1-f2da82182a11" />
-
 ## Mã hóa:
 
 <img width="1917" height="1137" alt="image" src="https://github.com/user-attachments/assets/4fd105a7-82d5-4d05-9982-c8f4845b41d3" />
@@ -145,6 +141,10 @@ Các bước:
 ## Giải mã:
 
 <img width="1917" height="1136" alt="image" src="https://github.com/user-attachments/assets/0dc5ad60-b99d-4792-9264-253b7b30c0cb" />
+
+## C++:
+
+<img width="1478" height="757" alt="image" src="https://github.com/user-attachments/assets/c444f457-5a00-4b77-b1f1-f2da82182a11" />
 
 # 5. Phương pháp mã hóa Playfair
 
@@ -187,10 +187,6 @@ Tương tự thuật toán mã hóa nhưng:
 - Known-plaintext: nếu biết vài cặp digraph → rút ra cấu trúc key square.
 - Vì Playfair mã hóa theo digraph nên phân tích tần suất đơn ký tự ít hữu dụng hơn; phải dùng digraph/quadgram.
 
-## C++:
-
-<img width="1473" height="754" alt="image" src="https://github.com/user-attachments/assets/4341287d-ad12-434c-b8ab-8083bd8721e8" />
-
 ## Mã hóa:
 
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/aa80d6f7-10b3-4e20-be2c-794bc5cd9f7a" />
@@ -198,6 +194,10 @@ Tương tự thuật toán mã hóa nhưng:
 ## Giải mã:
 
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/a3c268bf-9c4e-4314-a8df-a8acf4dd406a" />
+
+## C++:
+
+<img width="1473" height="754" alt="image" src="https://github.com/user-attachments/assets/4341287d-ad12-434c-b8ab-8083bd8721e8" />
 
 
 
