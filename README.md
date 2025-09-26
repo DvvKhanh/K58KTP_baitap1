@@ -35,6 +35,10 @@ Công thức giải mã: P=(C−K)(mod26)
 - Phân tích tần suất: tìm ký tự xuất hiện nhiều nhất trong ciphertext (thường tương ứng E trong tiếng Anh) → suy k bằng cách so sánh.
 - Kết hợp: dùng scoring (n-gram) để tự động chọn candidate tốt nhất.
 
+## C++:
+
+<img width="1478" height="763" alt="image" src="https://github.com/user-attachments/assets/58bdfa3f-41ce-4944-809b-15d835ce06fe" />
+
 ## Mã hóa:
 
 <img width="1919" height="1138" alt="image" src="https://github.com/user-attachments/assets/e3998e0f-211e-403e-9b40-1a4e3c23997e" />
@@ -55,6 +59,10 @@ Công thức giải mã: P=(C−K)(mod26)
 ## Cách phá mã:
 - Tìm nghịch đảo modulo: Tìm a⁻¹.
 - Thử mọi khóa (bất kỳ): Thử tất cả các cặp (a, b) phù hợp với điều kiện gcd(a, m) = 1.
+
+## C++:
+
+<img width="1475" height="755" alt="image" src="https://github.com/user-attachments/assets/ae7e7d6f-be4a-41cb-8f70-ec4502ffe109" />
 
 ## Mã hóa:
 
@@ -86,6 +94,10 @@ Các bước:
 - Kết hợp với scoring n-gram: dùng thuật toán tìm kiếm trên không gian hoán vị, tính điểm bằng n-gram (bigrams/trigrams) để chọn hoán vị hợp lý.
 - Known-plaintext / crib: nếu biết đoạn plaintext xuất hiện ở đâu, dùng để tìm hoán vị phù hợp.
 - Phân tích cấu trúc: dựa vào vị trí khoảng trắng/điểm, tần suất chữ, độ dài từ để suy.
+
+## C++:
+
+<img width="1473" height="760" alt="image" src="https://github.com/user-attachments/assets/da50fd39-8579-4f06-a8e2-d82302ff52b3" />
 
 ## Mã hóa:
 
@@ -121,6 +133,8 @@ Các bước:
 - Friedman test (Index of Coincidence): ước lượng độ dài key bằng tính IC (chỉ số trùng hợp).
 - Khi biết m: chia ciphertext thành m dãy (các ký tự tương ứng cùng vị trí modulo m), mỗi dãy là Caesar cipher → áp dụng phân tích tần suất trên từng dãy để tìm shift của từng dãy → xây lại key.
 - Kết hợp: sử dụng scoring n-gram để chọn độ dài key và key tốt nhất.
+
+## C++:
 
 ## Mã hóa:
 
