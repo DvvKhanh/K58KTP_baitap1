@@ -136,6 +136,8 @@ Các bước:
 
 ## C++:
 
+<img width="1478" height="757" alt="image" src="https://github.com/user-attachments/assets/c444f457-5a00-4b77-b1f1-f2da82182a11" />
+
 ## Mã hóa:
 
 <img width="1917" height="1137" alt="image" src="https://github.com/user-attachments/assets/4fd105a7-82d5-4d05-9982-c8f4845b41d3" />
@@ -184,6 +186,10 @@ Tương tự thuật toán mã hóa nhưng:
 - Heuristic search: hill-climbing, simulated annealing, genetic algorithm trên không gian các ma trận 5×5 — tối ưu scoring n-gram (English fitness) để tìm ma trận khả dĩ.
 - Known-plaintext: nếu biết vài cặp digraph → rút ra cấu trúc key square.
 - Vì Playfair mã hóa theo digraph nên phân tích tần suất đơn ký tự ít hữu dụng hơn; phải dùng digraph/quadgram.
+
+## C++:
+
+<img width="1473" height="754" alt="image" src="https://github.com/user-attachments/assets/4341287d-ad12-434c-b8ab-8083bd8721e8" />
 
 ## Mã hóa:
 
